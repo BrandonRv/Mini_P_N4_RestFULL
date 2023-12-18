@@ -1,0 +1,615 @@
+{
+	"info": {
+		"_postman_id": "baa9b4da-1569-4f50-bf67-0ea3940610ba",
+		"name": "api_Registro",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30196358"
+	},
+	"item": [
+		{
+			"name": "Get 'alumnos'",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				},
+				"description": "Muestra todos los alumnos existentes que tengan el 'state' en 1 osea que esten activados."
+			},
+			"response": []
+		},
+		{
+			"name": "Get 'alumnos' show",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/alumnos/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"alumnos",
+						"1"
+					]
+				},
+				"description": "Muestra el alumno con el id ingresado y que tenga el 'state' en 1 osea que este activado."
+			},
+			"response": []
+		},
+		{
+			"name": "Create 'alumnos'",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\":\"Alumno04\",\r\n    \"apellido\":\"Alumno04\",\r\n    \"condicion\":\"0\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/alumnos",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"alumnos"
+					]
+				},
+				"description": "Permite ingresar un nuevo alumno con un valor en el campo \"name\""
+			},
+			"response": []
+		},
+		{
+			"name": "Update 'alumnos'",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\":\"Alumno04\",\r\n    \"apellido\":\"Alumno04\",\r\n    \"condicion\":\"0\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/alumnos/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"alumnos",
+						"1"
+					]
+				},
+				"description": "Permite actualizar los campos \"name\" y \"state\" de alumnos"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete 'alumnos'",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/alumnos/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"alumnos",
+						"1"
+					]
+				},
+				"description": "Permite desactivar un alumno por medio de su Id , cambiando su \"state\" a 0"
+			},
+			"response": []
+		},
+		{
+			"name": "Get 'docentes'",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/docentes",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"docentes"
+					]
+				},
+				"description": "Muestra todos los docentes existentes que tengan el 'state' en 1 osea que esten activados."
+			},
+			"response": []
+		},
+		{
+			"name": "Get 'docentes' show",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/docentes/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"docentes",
+						"1"
+					]
+				},
+				"description": "Muestra el docente con el id ingresado y que tenga el 'state' en 1 osea que este activado."
+			},
+			"response": []
+		},
+		{
+			"name": "Create 'docentes'",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\":\"Maestro04\",\r\n    \"apellido\":\"Maestro04\",\r\n    \"condicion\":\"0\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/docentes",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"docentes"
+					]
+				},
+				"description": "Permite ingresar un nuevo docente con un valor en el campo \"name\""
+			},
+			"response": []
+		},
+		{
+			"name": "Update 'docentes'",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\":\"Maestro04\",\r\n    \"apellido\":\"Maestro04\",\r\n    \"condicion\":\"0\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/docentes/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"docentes",
+						"1"
+					]
+				},
+				"description": "Permite actualizar los campos \"name\" y \"state\" de docentes"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete 'docentes'",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/docentes/13",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"docentes",
+						"13"
+					]
+				},
+				"description": "Permite desactivar un docente por medio de su Id , cambiando su \"state\" a 0"
+			},
+			"response": []
+		},
+		{
+			"name": "Get 'cursos'",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/cursos",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"cursos"
+					]
+				},
+				"description": "Muestra todos los cursos existentes que tengan el 'state' en 1 osea que esten activados."
+			},
+			"response": []
+		},
+		{
+			"name": "Get 'cursos' show",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/cursos/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"cursos",
+						"1"
+					]
+				},
+				"description": "Muestra el curso con el id ingresado y que tenga el 'state' en 1 osea que este activado."
+			},
+			"response": []
+		},
+		{
+			"name": "Create 'cursos'",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre_curso\":\"Biologia\",\r\n    \"condicion\":\"1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/cursos/102",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"cursos",
+						"102"
+					]
+				},
+				"description": "Permite ingresar un nuevo curso con los valores en los campos \"name\" y \"docente_id\""
+			},
+			"response": []
+		},
+		{
+			"name": "Update 'cursos'",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre_curso\":\"RTOS22\",\r\n    \"docente_id\":\"55\",\r\n    \"condicion\": \"0\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/cursos/60",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"cursos",
+						"60"
+					]
+				},
+				"description": "Permite actualizar los campos \"name\", \"docente_id\" y \"state\" de cursos"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete 'cursos'",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/cursos/6",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"cursos",
+						"6"
+					]
+				},
+				"description": "Permite desactivar un curso por medio de su Id , cambiando su \"state\" a 0"
+			},
+			"response": []
+		},
+		{
+			"name": "Get matriculas",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/matriculas",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"matriculas"
+					]
+				},
+				"description": "Muestra todos los alumnos matriculados existentes que tengan el 'state' en 1 osea que esten activados."
+			},
+			"response": []
+		},
+		{
+			"name": "Get matriculas show",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/matriculas/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"matriculas",
+						"1"
+					]
+				},
+				"description": "Muestra el alumno matriculado con el id ingresado y que tenga el 'state' en 1 osea que este activado."
+			},
+			"response": []
+		},
+		{
+			"name": "Create matriculas",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"cursos_id\": \"3\",\r\n    \"alumnos_id\": \"5\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/matriculas/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"matriculas",
+						""
+					]
+				},
+				"description": "Permite matricular un nuevo alumno a un curso exitente con los valores en los campos \"cursos_id\" y \"alumnos_id\""
+			},
+			"response": []
+		},
+		{
+			"name": "Update matriculas",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"update\": \"2\",\r\n    \"cursos_id\": \"2\",\r\n    \"alumnos_id\": \"2\",\r\n    \"asistencia\": \"T\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/matriculas/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"matriculas",
+						"1"
+					]
+				},
+				"description": "Permite actualizar los campos \"cursos_id\", \"alumnos_id\", \"asistencia\" y \"state\" de una matricula"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete matriculas",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/matriculas/2",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"matriculas",
+						"2"
+					]
+				},
+				"description": "Permite desactivar una matricula por medio de su Id , cambiando su \"state\" a 0"
+			},
+			"response": []
+		}
+	]
+}

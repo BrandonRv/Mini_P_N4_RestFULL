@@ -14,7 +14,7 @@
 				"url": {
 					"raw": ""
 				},
-				"description": "Muestra todos los alumnos existentes que tengan el 'state' en 1 osea que esten activados."
+				"description": "Muestra todos los alumnos existentes que tengan."
 			},
 			"response": []
 		},
@@ -39,7 +39,7 @@
 						"1"
 					]
 				},
-				"description": "Muestra el alumno con el id ingresado y que tenga el 'state' en 1 osea que este activado."
+				"description": "Muestra el alumno con el id ingresado y que tenga la 'condicion' en 1 osea que este activado."
 			},
 			"response": []
 		},
@@ -72,7 +72,7 @@
 						"alumnos"
 					]
 				},
-				"description": "Permite ingresar un nuevo alumno con un valor en el campo \"name\""
+				"description": "Permite ingresar un nuevo alumno con un valor en el campo \"nombre\" y 'apellido'."
 			},
 			"response": []
 		},
@@ -106,7 +106,7 @@
 						"1"
 					]
 				},
-				"description": "Permite actualizar los campos \"name\" y \"state\" de alumnos"
+				"description": "Permite actualizar los campos \"nombre\" \"apellido\" y \"condicion\" de alumnos"
 			},
 			"response": []
 		},
@@ -131,7 +131,7 @@
 						"1"
 					]
 				},
-				"description": "Permite desactivar un alumno por medio de su Id , cambiando su \"state\" a 0"
+				"description": "Permite eliminar un alumno por medio de su Id ."
 			},
 			"response": []
 		},
@@ -155,7 +155,7 @@
 						"docentes"
 					]
 				},
-				"description": "Muestra todos los docentes existentes que tengan el 'state' en 1 osea que esten activados."
+				"description": "Muestra todos los docentes existentes que tengan."
 			},
 			"response": []
 		},
@@ -180,7 +180,7 @@
 						"1"
 					]
 				},
-				"description": "Muestra el docente con el id ingresado y que tenga el 'state' en 1 osea que este activado."
+				"description": "Muestra el docente con el id ingresado y que tenga la 'condicion' en 1 osea que este activado."
 			},
 			"response": []
 		},
@@ -213,7 +213,7 @@
 						"docentes"
 					]
 				},
-				"description": "Permite ingresar un nuevo docente con un valor en el campo \"name\""
+				"description": "Permite ingresar un nuevo docente con un valor en el campo \"nombre\", \"apellido\" y agregar una \"condicion\""
 			},
 			"response": []
 		},
@@ -247,7 +247,7 @@
 						"1"
 					]
 				},
-				"description": "Permite actualizar los campos \"name\" y \"state\" de docentes"
+				"description": "Permite actualizar los campos \"nombre\" \"apellido\" y \"condicion\" de un docente ya sea para activar o desactivar."
 			},
 			"response": []
 		},
@@ -281,7 +281,7 @@
 						"13"
 					]
 				},
-				"description": "Permite desactivar un docente por medio de su Id , cambiando su \"state\" a 0"
+				"description": "Permite eleminar un docente por medio de su Id."
 			},
 			"response": []
 		},
@@ -305,7 +305,7 @@
 						"cursos"
 					]
 				},
-				"description": "Muestra todos los cursos existentes que tengan el 'state' en 1 osea que esten activados."
+				"description": "Muestra todos los cursos existentes que tengan."
 			},
 			"response": []
 		},
@@ -330,7 +330,7 @@
 						"1"
 					]
 				},
-				"description": "Muestra el curso con el id ingresado y que tenga el 'state' en 1 osea que este activado."
+				"description": "Muestra el curso con el id ingresado y que tenga la 'condicion' en 1 osea que este activado."
 			},
 			"response": []
 		},
@@ -364,7 +364,7 @@
 						"102"
 					]
 				},
-				"description": "Permite ingresar un nuevo curso con los valores en los campos \"name\" y \"docente_id\""
+				"description": "Permite ingresar un nuevo curso con los valores en los campos \"nombre_curso\" y \"condicion\" el \"docente_id\" se envia por la url como parametro"
 			},
 			"response": []
 		},
@@ -398,7 +398,7 @@
 						"60"
 					]
 				},
-				"description": "Permite actualizar los campos \"name\", \"docente_id\" y \"state\" de cursos"
+				"description": "Permite actualizar los campos \"nombre_curso\", \"docente_id\" y \"condicion\" de cursos. Segun el ID en la url"
 			},
 			"response": []
 		},
@@ -432,7 +432,7 @@
 						"6"
 					]
 				},
-				"description": "Permite desactivar un curso por medio de su Id , cambiando su \"state\" a 0"
+				"description": "Permite Eliminar un curso por medio de su Id ."
 			},
 			"response": []
 		},
@@ -468,7 +468,7 @@
 						"matriculas"
 					]
 				},
-				"description": "Muestra todos los alumnos matriculados existentes que tengan el 'state' en 1 osea que esten activados."
+				"description": "Muestra todos los alumnos matriculados existentes."
 			},
 			"response": []
 		},
@@ -505,7 +505,7 @@
 						"1"
 					]
 				},
-				"description": "Muestra el alumno matriculado con el id ingresado y que tenga el 'state' en 1 osea que este activado."
+				"description": "Muestra el alumno matriculado con el id ingresado y que tenga la 'condicion' en 1 osea que este activado."
 			},
 			"response": []
 		},
@@ -550,7 +550,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"update\": \"2\",\r\n    \"cursos_id\": \"2\",\r\n    \"alumnos_id\": \"2\",\r\n    \"asistencia\": \"T\"\r\n}",
+					"raw": "{\r\n    \"update\": \"1\",\r\n    \"cursos_id\": \"66\",\r\n    \"alumnos_id\": \"75\",\r\n    \"condicion\": \"3\",\r\n    \"asistencia\": \"A\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -558,7 +558,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://127.0.0.1:8000/api/matriculas/1",
+					"raw": "http://127.0.0.1:8000/api/matriculas/20",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -570,10 +570,10 @@
 					"path": [
 						"api",
 						"matriculas",
-						"1"
+						"20"
 					]
 				},
-				"description": "Permite actualizar los campos \"cursos_id\", \"alumnos_id\", \"asistencia\" y \"state\" de una matricula"
+				"description": "Permite actualizar los campos \"cursos_id\", \"alumnos_id\", \"asistencia\" y \"condicion\" de una matricula. Tambien puede inserta una Asistencia o Eliminarla con cambiar el valor de 'update' = 1 (actualiza todo), 2 (actualiza solo asistencia, 3 (quita una asistencia)."
 			},
 			"response": []
 		},
@@ -607,7 +607,7 @@
 						"2"
 					]
 				},
-				"description": "Permite desactivar una matricula por medio de su Id , cambiando su \"state\" a 0"
+				"description": "Permite eliminar una matricula por medio de su Id ."
 			},
 			"response": []
 		}

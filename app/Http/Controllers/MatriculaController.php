@@ -85,14 +85,31 @@ class MatriculaController extends Controller
     public function update(Request $request, $id)
     {
         try {
+            $condicionMat = $request->condicion;
             if (Matricula::find($id) != null) {
                 $matricula = Matricula::find($id);
                 if ($request->update == 1) { // PARA ACTUALIZAR TODO
-                    $this->updateAll($matricula, $request, $id);
+                    if ($condicionMat == 1 || $condicionMat == 0 || $request->alumnos_id || $request->cursos_id) {
+                        $AlumnosAll = Alumno::where('condicion', '=', 1)->where('id', '=', $request->alumnos_id)->get();
+                        $CursosAll = Curso::where('condicion', '=', 1)->where('id', '=', $request->cursos_id)->get();
+                        if (count($AlumnosAll) == 0 || count($CursosAll) == 0) {
+                            return "No existe un alumno con 'alumnos_id' ó ese 'cursos_id' o esta desactivado, porfavor ingrese un 'alumnos_id' y 'cursos_id' valido.";
+                        } else {
+                            $this->updateAll($matricula, $request, $condicionMat, $id);
+                            $matricula->save();
+                            return "Se han guardado todos los datos Correctamente para el id :" . $id . ".";
+                        }
+                    } else {
+                        return "'state' solo acepta los valores 0 o 1.\n 'state' sin modificaciones.\n";
+                    }
                 } else if ($request->update == 2) { // PARA ACTUALIZAR ASISTENCIA
-                    $this->asistenciaInsert($request, $id);
+
+                    $this->asistenciaInsert($matricula, $request, $id);
+                    $matricula->save();
                 } else if ($request->update == 3) { // PARA ELEMINAR ASISTENCIA
-                    $this->asistenciaDelete($id);
+
+                    $this->asistenciaDelete($matricula, $id);
+                    $matricula->save();
                 }
             } else {
                 return "No existe un registro con el id : " . $id . ".";
@@ -102,48 +119,20 @@ class MatriculaController extends Controller
         }
     }
 
-    private function updateAll(Matricula $matricula, Request $request, $id)
+    private function updateAll(Matricula $matricula, Request $request, $condicionMat, $id)
     {
-        if ($request->asistencia) {
-            $AlumnosAll = Alumno::where('state', '=', 1)->where('id', $request->alumnos_id)->get();
-
-            if (count($AlumnosAll) == 0) {
-                return "No existe un alumno con ese 'alumnos_id' o esta desactivado, porfavor ingrese un 'alumnos_id' valido.";
-            } else {
-                $matricula->alumnos_id = $request->alumnos_id;
-            }
+        if ($condicionMat == 1 || $condicionMat == 0) {
+            $matricula->alumnos_id = $request->alumnos_id;
+            $matricula->cursos_id = $request->cursos_id;
+            $matricula->condicion = $condicionMat;
         }
-        if ($request->cursos_id) {
-            $CursosAll = Curso::where('state', '=', 1)->where('id', $request->cursos_id)->get();
-
-            if (count($CursosAll) == 0) {
-                return "No existe un curso con ese 'cursos_id' o esta desactivado, porfavor ingrese un 'cursos_id' valido.";
-            } else {
-                $matricula->cursos_id = $request->cursos_id;
-            }
-        }
-        if ($request->state) {
-            if ($request->state == 1 || $request->state == 0) {
-                $matricula->state = $request->state;
-            } else {
-                return "'state' solo acepta los valores 0 o 1.\n 'state' sin modificaciones.\n";
-            }
-        }
+        $this->asistenciaInsert($matricula, $request, $id);
+    }
+    private function asistenciaInsert(Matricula $matricula, Request $request, $id)
+    {
         if ($request->asistencia) {
             if ($request->asistencia == "A" || $request->asistencia == "T" || $request->asistencia == "F") {
                 $matricula->asistencia = $request->asistencia;
-            } else {
-                return "'asistencia' solo acepta los valores 'A', 'T' o 'F'.\n 'asistencia' sin modificaciones.\n";
-            }
-        }
-    }
-    private function asistenciaInsert(Request $request, $id)
-    {
-        $asistencia = Matricula::find($id);
-        if ($request->asistencia) {
-            if ($request->asistencia == "A" || $request->asistencia == "T" || $request->asistencia == "F") {
-                $asistencia->asistencia = $request->asistencia;
-                $asistencia->save();
                 return "Asistencia registrada para el id " . $id;
             } else {
                 return "'asistencia' solo acepta los valores 'A', 'T' o 'F'.\n 'asistencia' sin modificaciones.\n";
@@ -151,21 +140,17 @@ class MatriculaController extends Controller
         }
         return "Es nesesario ingresar un valor en el objeto de 'asistencia:' para ser tomar la asistencia.";
     }
-    private function asistenciaDelete($id)
+    private function asistenciaDelete(Matricula $matricula, $id)
     {
-        $borrarAsistencia = Matricula::find($id);
-        if ($borrarAsistencia->asistencia == null) {
+        if ($matricula->asistencia == null) {
             return "No hay una asistencia registrada.";
         }
-        if ($borrarAsistencia == null) {
+        if ($matricula == null) {
             return "No existe alguien matriculado con el id N° " . $id . ", por eso no se puede borrar asistencia.";
         }
-        $borrarAsistencia->asistencia = null;
-        $borrarAsistencia->save();
+        $matricula->asistencia = null;
         return "Se ha eliminado la asistencia.";
     }
-
-
 
     /**
      * Remove the specified resource from storage.
